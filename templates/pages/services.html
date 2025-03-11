@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Tätigkeitsgebiete - Rechtsanwalt Max Matusewicz{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Tätigkeitsgebiete von Rechtsanwalt Max Matusewicz - Kompetente Strafverteidigung in verschiedenen Rechtsbereichen">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero section -->
+    <section class="hero is-primary" style="background-color: #283149;">
+        <div class="container has-text-centered py-6">
+            <h1 class="title is-1 has-text-centered has-text-white mb-4">Tätigkeitsgebiete</h1>
+            <p class="subtitle is-4 has-text-centered has-text-white">Kompetente Strafverteidigung in verschiedenen Rechtsgebieten</p>
+        </div>
+    </section>
+    
+    <!-- Navigation section (jump links) -->
+    <section class="section py-4">
+        <div class="container box">
+            <div class="is-flex is-flex-wrap-wrap is-align-items-center">
+                <p class="mr-4 has-text-weight-bold">Direkt zu einem Bereich springen:</p>
+                {% for service in services %}
+                    <a href="#{{ service.anchor }}" class="button is-small is-light mr-2 mb-2">{{ service.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services section -->
+    <section class="section py-6">
+        <div class="container">
+            {% for service in services %}
+                <div>
+                    <div class="box p-5 mb-6" style="border-top: 3px solid #3273dc;">
+                        <h2 id="{{ service.anchor }}" class="title is-3 mb-5 has-text-primary">{{ service.title }}</h2>
+                        <p class="content is-size-5 mb-5">{{ service.description }}</p>
+                        
+                        <!-- Examples -->
+                        <div class="mt-5">
+                            <h4 class="subtitle is-5 mb-3">Beispiele für Tätigkeiten in diesem Bereich:</h4>
+                            <div class="tags">
+                                {% for example in service.examples %}
+                                    <span class="tag is-medium is-primary mr-2 mb-2">{{ example }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <!-- Call to action -->
+                        <div class="mt-5">
+                            <a href="/kontakt" class="button is-primary is-outlined">Kontakt aufnehmen</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!-- Call to action section -->
+    <section class="section has-background-light py-6">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 has-text-centered mb-4">Benötigen Sie kompetente rechtliche Vertretung?</h2>
+            <p class="subtitle is-4 has-text-centered mb-5">Kontaktieren Sie mich für ein unverbindliches Erstgespräch</p>
+            <div class="buttons is-centered">
+                <a href="/kontakt" class="button is-primary is-large">Kontakt aufnehmen</a>
+                <a href="/24h-notdienst" class="button is-danger is-large ml-4">24h Notdienst</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

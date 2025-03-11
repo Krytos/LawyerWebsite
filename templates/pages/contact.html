@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block title %}Kontakt - Rechtsanwalt Max Matusewicz{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Kontaktieren Sie Rechtsanwalt Max Matusewicz für ein unverbindliches Erstgespräch - Strafverteidiger in Frankfurt am Main">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero section -->
+    <section class="hero is-primary" style="background-color: #283149;">
+        <div class="container has-text-centered py-6">
+            <h1 class="title is-1 has-text-centered has-text-white mb-4">Kontakt</h1>
+            <p class="subtitle is-4 has-text-centered has-text-white">Vereinbaren Sie ein unverbindliches Erstgespräch</p>
+        </div>
+    </section>
+    
+    <!-- Contact info and form -->
+    <section class="section py-6">
+        <div class="container">
+            <div class="columns">
+                <!-- Office info column -->
+                <div class="column is-5" style="border-right: 1px solid rgba(0,0,0,0.1);">
+                    <h2 class="title is-3 mb-5">Kanzlei</h2>
+                    
+                    <!-- Location info -->
+                    <div class="mb-5">
+                        <h3 class="title is-4 mb-3">Standort</h3>
+                        <p class="mb-2"><strong>Rechtsanwalt Max Matusewicz</strong></p>
+                        <p class="mb-4">
+                            Münchener Straße 9<br>
+                            60329 Frankfurt am Main
+                        </p>
+                        <a href="https://www.google.com/maps/place/M%C3%BCnchener+Str.+9,+60329+Innenstadt+I/@50.1080612,8.6688573,17z/" 
+                           target="_blank" 
+                           class="button is-small is-primary is-outlined">
+                            Auf Google Maps anzeigen
+                        </a>
+                    </div>
+                    
+                    <!-- Contact info -->
+                    <div class="mb-5">
+                        <h3 class="title is-4 mb-3">Kontaktinformationen</h3>
+                        <p class="mb-2">
+                            <strong>Telefon: </strong>
+                            <a href="tel:06945000234" class="has-text-primary">069 45 000 234</a>
+                        </p>
+                        <p class="mb-2"><strong>Telefax: </strong>069 45 000 232</p>
+                        <p class="mb-2">
+                            <strong>Mobil: </strong>
+                            <a href="tel:015168491960" class="has-text-primary">0151 68491960</a>
+                        </p>
+                        <p class="mb-2">
+                            <strong>E-Mail: </strong>
+                            <a href="mailto:matusewicz@rechtsanwalt-matusewicz.de" class="has-text-primary">matusewicz@rechtsanwalt-matusewicz.de</a>
+                        </p>
+                    </div>
+                    
+                    <!-- Office hours -->
+                    <div class="mb-4">
+                        <h3 class="title is-4 mb-3">Öffnungszeiten</h3>
+                        <p class="mb-2">
+                            <strong>Montag – Freitag:</strong><br>
+                            09:00–18:00 Uhr
+                        </p>
+                        <a href="/24h-notdienst" class="button is-danger">24h Notdienst</a>
+                    </div>
+                </div>
+                
+                <!-- Contact form column -->
+                <div class="column is-7">
+                    <h2 class="title is-3 mb-5">Kontaktformular</h2>
+                    <p class="mb-5">
+                        Füllen Sie das Formular aus und ich werde mich schnellstmöglich bei Ihnen melden. 
+                        Bitte beachten Sie, dass das Absenden des Formulars noch kein Mandatsverhältnis begründet.
+                    </p>
+                    
+                    <!-- Contact form with HTMX -->
+                    <form class="columns is-multiline contact-form" 
+                          method="post" 
+                          action="#" 
+                          hx-post="/api/submit-contact" 
+                          hx-target="#form-response" 
+                          hx-swap="innerHTML">
+                        
+                        <!-- Salutation -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="salutation" class="label">Anrede</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="salutation" name="salutation" class="input">
+                                            <option value="" selected="selected">Bitte wählen</option>
+                                            <option value="Herr">Herr</option>
+                                            <option value="Frau">Frau</option>
+                                            <option value="Divers">Divers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Name -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="name" class="label">Name *</label>
+                                <div class="control">
+                                    <input type="text" 
+                                           id="name" 
+                                           name="name" 
+                                           placeholder="Vor- und Nachname" 
+                                           class="input" 
+                                           required="required">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="email" class="label">E-Mail *</label>
+                                <div class="control">
+                                    <input type="email" 
+                                           id="email" 
+                                           name="email" 
+                                           placeholder="Ihre E-Mail-Adresse" 
+                                           class="input" 
+                                           required="required">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="phone" class="label">Telefon</label>
+                                <div class="control">
+                                    <input type="tel" 
+                                           id="phone" 
+                                           name="phone" 
+                                           placeholder="Ihre Telefonnummer" 
+                                           class="input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Subject -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="subject" class="label">Betreff *</label>
+                                <div class="control">
+                                    <input type="text" 
+                                           id="subject" 
+                                           name="subject" 
+                                           placeholder="Betreff Ihrer Anfrage" 
+                                           class="input" 
+                                           required="required">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message -->
+                        <div class="column is-12">
+                            <div class="field">
+                                <label for="message" class="label">Nachricht *</label>
+                                <div class="control">
+                                    <textarea id="message" 
+                                              name="message" 
+                                              placeholder="Ihre Nachricht" 
+                                              rows="5" 
+                                              class="textarea" 
+                                              required="required"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Privacy policy agreement -->
+                        <div class="column is-12 mt-3">
+                            <div class="field">
+                                <div class="field is-flex is-align-items-flex-start">
+                                    <div class="control">
+                                        <input type="checkbox" 
+                                               id="privacy" 
+                                               name="privacy" 
+                                               required="required">
+                                    </div>
+                                    <label for="privacy" class="checkbox ml-2 is-size-7">
+                                        Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, 
+                                        dass meine Angaben zur Kontaktaufnahme verwendet werden.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit button -->
+                        <div class="column is-12 mt-3">
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-medium">Nachricht senden</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Form response area -->
+                    <div id="form-response" class="mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-3 has-text-centered mb-5">So finden Sie uns</h2>
+            
+            <!-- Embedded Google Maps iframe placeholder -->
+            <div style="width: 100%; height: 400px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></div>
+            
+            <p class="has-text-centered mt-4">
+                Die Kanzlei befindet sich in zentraler Lage in Frankfurt am Main und ist 
+                sowohl mit dem Auto als auch mit öffentlichen Verkehrsmitteln gut zu erreichen.
+            </p>
+        </div>
+    </section>
+{% endblock %}

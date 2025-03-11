@@ -1,0 +1,42 @@
+<div class="column is-6-tablet is-12-mobile is-4-desktop" style="transition: all 0.3s ease;">
+    {% set bg_style = "background-color: #ffffff;" %}
+    {% if service.id in [1, 2, 3, 4, 5, 6, 7, 8] %}
+        {% if service.id == 1 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 2 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 3 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1600880291298-8481039492bc?w=500') no-repeat; background-size: cover; background-position: center bottom;" %}
+        {% elif service.id == 4 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 5 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 6 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 7 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1565385528783-5e6c2822ec7f?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% elif service.id == 8 %}
+            {% set bg_style = "background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500') no-repeat; background-size: cover; background-position: center;" %}
+        {% endif %}
+    {% endif %}
+    <div class="card service-card" id="service-{{ service.id }}" style="border-left: 4px solid #2B5797; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); overflow: hidden; height: 100%;">
+        <div class="card-content" style="{{ bg_style }}">
+            <!-- Service content -->
+            <div id="service-content-{{ service.id }}" class="service-content">
+                <h3 class="title is-4 mb-4 is-size-5-mobile" style="color: #2B5797; text-shadow: 0 1px 1px rgba(255,255,255,0.8);">{{ service.title }}</h3>
+                {% if service.preview %}
+                    <p class="content is-size-6 is-size-7-mobile" style="color: #333333; text-shadow: 0 1px 1px rgba(255,255,255,0.8);">
+                        {{ service.preview[:100] ~ '...' if service.preview|length > 100 else service.preview }}
+                    </p>
+                {% endif %}
+                <button class="button is-small is-outlined mt-3"
+                        style="color: #2B5797; border-color: #2B5797;"
+                        hx-get="/api/service/{{ service.id }}"
+                        hx-target="#service-content-{{ service.id }}"
+                        hx-swap="innerHTML">
+                    Mehr erfahren
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

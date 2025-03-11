@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{% block title %}Rechtsanwalt Max Matusewicz{% endblock %}</title>
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap">
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/65ae6690557c3e3e7314933e/f7ba9852-1e5b-453e-b634-7994b5de44cb/favicon.ico">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', path='css/custom.css') }}">
+
+    <!-- Additional meta tags -->
+    {% block meta %}{% endblock %}
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        {% include "partials/header.html" %}
+
+        <!-- Main content -->
+        <main class="main-content parallax-bg" style="position: relative; min-height: calc(100vh - 52px); padding: 2rem 1rem;">
+            <div class="card single-card" style="max-width: 1200px; margin: 0 auto; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; position: relative; z-index: 2;">
+                <div class="card-content">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+
+            <!-- Contact Bar (if included) -->
+            {% if include_contact_bar | default(True) %}
+                {% include "partials/contact_bar.html" %}
+            {% endif %}
+        </main>
+
+        <!-- Footer -->
+        {% include "partials/footer.html" %}
+    </div>
+
+    <!-- Additional scripts -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

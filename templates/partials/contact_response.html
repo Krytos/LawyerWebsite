@@ -1,0 +1,11 @@
+{% if success %}
+<div class="notification is-success">
+    <p class="has-text-weight-bold">Vielen Dank für Ihre Nachricht, {{ name }}!</p>
+    <p>Ich werde mich schnellstmöglich bei Ihnen melden.</p>
+</div>
+{% else %}
+<div class="notification is-danger">
+    <p class="has-text-weight-bold">Ein Fehler ist aufgetreten.</p>
+    <p>Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt über die angegebene Telefonnummer.</p>
+</div>
+{% endif %}

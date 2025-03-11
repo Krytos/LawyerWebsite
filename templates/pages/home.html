@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}Strafverteidiger Max Matusewicz - Strafrecht in Frankfurt am Main{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Strafverteidiger Max Matusewicz in Frankfurt am Main - Bundesweite Strafverteidigung in allen Bereichen des Strafrechts">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero section -->
+    {% include "partials/hero.html" %}
+    
+    <!-- Introduction section -->
+    <div class="section intro-section mb-6">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <!-- Lawyer photo -->
+                <div class="column is-5-desktop is-12-tablet has-text-centered-mobile">
+                    <img src="https://images.squarespace-cdn.com/content/v1/65ae6690557c3e3e7314933e/7bb232a1-a466-455e-9e3c-1f52220a7628/3959ea7f93b04f6fa9a00cac0f20fc77_3.JPG"
+                         alt="Rechtsanwalt Max Matusewicz"
+                         class="lawyer-portrait is-hidden-mobile"
+                         style="border-radius: 5px; max-height: 400px;">
+                </div>
+
+                <!-- Introduction text -->
+                <div class="column is-7-desktop is-12-tablet">
+                    <h2 class="title is-2 mb-4 is-size-3-mobile">Ihr Strafverteidiger in Frankfurt am Main</h2>
+                    <p class="content is-size-5 mb-4 is-size-6-mobile">
+                        Meine Kanzleiräumlichkeiten befinden sich im Herzen Frankfurts.
+                        Ich berate und vertrete Sie bundesweit in allen strafrechtlichen Angelegenheiten.
+                    </p>
+                    <p class="is-size-5 is-size-6-mobile has-text-weight-bold has-text-primary mb-4">
+                        Hochqualifiziert | Engagiert | Diskret | Menschlich
+                    </p>
+                    <div class="buttons">
+                        <a href="/ueber-uns" class="button is-primary is-outlined">
+                            <i class="fas fa-user mr-2"></i>
+                            Mehr über mich erfahren
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section divider -->
+    <hr class="section-divider" style="border: none; border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 2rem auto; width: 80%; max-width: 1000px;">
+
+    <!-- Services preview section -->
+    <div class="section services-section mb-6">
+        <div class="container">
+            <!-- Section heading -->
+            <h2 class="title is-2 has-text-centered mb-5 is-size-3-mobile">Tätigkeitsgebiete</h2>
+            <p class="subtitle is-5 has-text-centered mb-5">Kompetente Strafverteidigung in verschiedenen Rechtsgebieten</p>
+
+            <!-- Service cards grid - first row -->
+            <div class="service-cards">
+                <div class="columns is-mobile is-multiline">
+                    {% for service in services[:3] %}
+                        {% with bg_style=SERVICE_BACKGROUNDS.get(service.id, "background-color: #ffffff;") %}
+                            {% include "partials/service_card.html" %}
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+
+                <!-- Second row of service cards -->
+                <div class="columns is-mobile is-multiline">
+                    {% for service in services[3:6] %}
+                        {% with bg_style=SERVICE_BACKGROUNDS.get(service.id, "background-color: #ffffff;") %}
+                            {% include "partials/service_card.html" %}
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+
+                <!-- View all services button -->
+                <div class="has-text-centered mt-5">
+                    <a href="/leistungen" class="button is-primary is-medium is-responsive">
+                        <span class="icon"><i class="fas fa-gavel"></i></span>
+                        <span>Alle Tätigkeitsgebiete ansehen</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section divider -->
+    <hr class="section-divider" style="border: none; border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 2rem auto; width: 80%; max-width: 1000px;">
+
+    <!-- Testimonials section -->
+    <div class="section testimonials-section mb-6">
+        <div class="container">
+            <!-- Section heading -->
+            <div class="mb-5">
+                <h2 class="title is-2 has-text-centered mb-5">Mandantenstimmen</h2>
+                <p class="subtitle is-5 has-text-centered mb-5">Was unsere Mandanten über uns sagen</p>
+            </div>
+
+            <!-- Testimonial cards -->
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="card h-100" style="height: 100%; border-radius: 6px; background-color: #f8f8f8; border: 1px solid #eaeaea; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="card-content">
+                            <!-- Quote icon -->
+                            <i class="fas fa-quote-left fa-2x has-text-primary mb-4" style="opacity: 0.3;"></i>
+
+                            <!-- Testimonial text -->
+                            <p class="is-size-5 mb-5 has-text-dark" style="font-weight: 500; color: #222 !important;">
+                                Herr Matusewicz hat mich in einer schwierigen Situation hervorragend vertreten.
+                                Seine kompetente und engagierte Arbeitsweise hat maßgeblich zu dem positiven Ausgang
+                                meines Falles beigetragen.
+                            </p>
+
+                            <!-- Author -->
+                            <p class="is-size-6 has-text-weight-bold" style="color: #333 !important;">
+                                Mandant im Bereich Verkehrsstrafrecht
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card h-100" style="height: 100%; border-radius: 6px; background-color: #f8f8f8; border: 1px solid #eaeaea; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="card-content">
+                            <!-- Quote icon -->
+                            <i class="fas fa-quote-left fa-2x has-text-primary mb-4" style="opacity: 0.3;"></i>
+
+                            <!-- Testimonial text -->
+                            <p class="is-size-5 mb-5 has-text-dark" style="font-weight: 500; color: #222 !important;">
+                                Durch die professionelle Betreuung von Rechtsanwalt Matusewicz fühlte ich mich jederzeit
+                                gut aufgehoben. Die transparente Kommunikation und das Engagement waren beeindruckend.
+                            </p>
+
+                            <!-- Author -->
+                            <p class="is-size-6 has-text-weight-bold" style="color: #333 !important;">
+                                Mandant im Bereich Wirtschaftsstrafrecht
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card h-100" style="height: 100%; border-radius: 6px; background-color: #f8f8f8; border: 1px solid #eaeaea; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="card-content">
+                            <!-- Quote icon -->
+                            <i class="fas fa-quote-left fa-2x has-text-primary mb-4" style="opacity: 0.3;"></i>
+
+                            <!-- Testimonial text -->
+                            <p class="is-size-5 mb-5 has-text-dark" style="font-weight: 500; color: #222 !important;">
+                                Als junger Beschuldigter war ich anfangs völlig überfordert. Herr Matusewicz hat nicht nur
+                                rechtlich kompetent beraten, sondern auch menschlich unterstützt. Das Ergebnis war besser als erwartet.
+                            </p>
+
+                            <!-- Author -->
+                            <p class="is-size-6 has-text-weight-bold" style="color: #333 !important;">
+                                Mandant im Bereich Jugendstrafrecht
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section divider -->
+    <hr class="section-divider" style="border: none; border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 2rem auto; width: 80%; max-width: 1000px;">
+    
+    <!-- CTA section -->
+    {% include "partials/cta.html" %}
+{% endblock %}

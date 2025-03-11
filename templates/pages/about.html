@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Über uns - Rechtsanwalt Max Matusewicz{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Über Rechtsanwalt Max Matusewicz - Ihr Strafverteidiger in Frankfurt am Main">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero section with smaller height -->
+    <section class="hero is-primary" style="background-color: #283149;">
+        <div class="container has-text-centered py-6">
+            <h1 class="title is-1 has-text-centered has-text-white mb-5">Über mich</h1>
+            <p class="subtitle is-3 has-text-centered has-text-white">Ihr Strafverteidiger in Frankfurt am Main</p>
+        </div>
+    </section>
+    
+    <!-- Main content section -->
+    <section class="section py-6">
+        <div class="container">
+            <div class="columns">
+                <!-- Lawyer photo column -->
+                <div class="column is-4-desktop is-12-tablet">
+                    <img src="https://images.squarespace-cdn.com/content/v1/65ae6690557c3e3e7314933e/7bb232a1-a466-455e-9e3c-1f52220a7628/3959ea7f93b04f6fa9a00cac0f20fc77_3.JPG" 
+                         alt="Rechtsanwalt Max Matusewicz" 
+                         class="lawyer-portrait" 
+                         style="border-radius: 5px; max-width: 100%;">
+                    
+                    <div class="content mt-5">
+                        <h3 class="title is-4 mt-5 mb-3">Kontakt</h3>
+                        <p class="mb-2">
+                            <strong>Telefon: </strong>
+                            <a href="tel:06945000234" class="has-text-dark">069 45 000 234</a>
+                        </p>
+                        <p class="mb-2">
+                            <strong>E-Mail: </strong>
+                            <a href="mailto:matusewicz@rechtsanwalt-matusewicz.de" class="has-text-dark">matusewicz@rechtsanwalt-matusewicz.de</a>
+                        </p>
+                        <p class="mb-2">
+                            <strong>Adresse: </strong>Münchener Straße 9, 60329 Frankfurt am Main
+                        </p>
+                        <a href="/kontakt" class="button is-primary is-outlined mt-4">Kontakt aufnehmen</a>
+                    </div>
+                </div>
+                
+                <!-- Lawyer bio column -->
+                <div class="column is-8-desktop is-12-tablet">
+                    <h2 class="title is-2 mb-5">Rechtsanwalt Max Matusewicz</h2>
+                    <p class="content is-size-5 mb-5">
+                        Meine Kanzleiräumlichkeiten befinden sich im Herzen Frankfurts. 
+                        Ich berate und vertrete Sie bundesweit in allen strafrechtlichen Angelegenheiten.
+                    </p>
+                    
+                    <!-- Professional profile -->
+                    <div class="content mb-6">
+                        <h3 class="title is-4 mb-4">Profil</h3>
+                        <p class="mb-4">
+                            Als Fachanwalt für Strafrecht bin ich auf die Verteidigung in sämtlichen Bereichen des Strafrechts spezialisiert. 
+                            Meine Mandanten schätzen meine kompetente, engagierte und diskrete Arbeitsweise.
+                        </p>
+                        <p class="mb-4">
+                            Durch jahrelange Erfahrung und regelmäßige Fortbildungen halte ich mich stets über aktuelle Rechtsprechung 
+                            und Gesetzesänderungen auf dem Laufenden, um Ihnen die bestmögliche Verteidigung zu bieten.
+                        </p>
+                    </div>
+                    
+                    <!-- Qualifications -->
+                    <div class="content mb-6">
+                        <h3 class="title is-4 mb-4">Qualifikationen</h3>
+                        <ul>
+                            <li>Fachanwalt für Strafrecht</li>
+                            <li>Mitglied in der Arbeitsgemeinschaft Strafrecht des Deutschen Anwaltvereins</li>
+                            <li>Regelmäßige Teilnahme an Fortbildungen im Bereich des Strafrechts</li>
+                            <li>Spezialisierung auf Wirtschaftsstrafrecht und Betäubungsmittelstrafrecht</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Approach -->
+                    <div class="content">
+                        <h3 class="title is-4 mb-4">Mein Ansatz</h3>
+                        <p class="mb-4">
+                            Jeder Fall ist einzigartig und erfordert eine individuelle Herangehensweise. 
+                            Ich lege großen Wert auf ein persönliches Vertrauensverhältnis zu meinen Mandanten 
+                            und garantiere eine zuverlässige Erreichbarkeit sowie eine transparente Kommunikation.
+                        </p>
+                        <p class="mb-4">
+                            Als Ihr Strafverteidiger stehe ich Ihnen in jeder Phase des Verfahrens zur Seite – 
+                            von der ersten Beschuldigtenvernehmung über die Hauptverhandlung bis hin zum Rechtsmittelverfahren.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to action section -->
+    <section class="section has-background-light py-6">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 has-text-centered mb-4">Benötigen Sie rechtliche Unterstützung?</h2>
+            <p class="subtitle is-4 has-text-centered mb-5">Kontaktieren Sie mich für ein unverbindliches Erstgespräch</p>
+            <div class="buttons is-centered">
+                <a href="/kontakt" class="button is-primary is-large">Kontakt aufnehmen</a>
+                <a href="/leistungen" class="button is-light is-large ml-4">Tätigkeitsgebiete entdecken</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

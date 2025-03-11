@@ -1,0 +1,28 @@
+[project]
+name = "anwaltwebsite"
+authors = [
+    {name = "Kevin Meinon", email = "kevin@meinon.de"},
+    ]
+
+version = "0.1.0"
+description = "Rechtsanwalt Matusewicz Website mit FastAPI und Jinja2"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "jinja2",
+    "uvicorn",
+    "python-multipart",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "E501",
+    "F841",
+    "F403",
+    "F405",
+    "E402",
+    "F811",
+]
+
+[tool.uv]
+UV_COMPILE_BYTECODE = true
