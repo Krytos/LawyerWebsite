@@ -1,5 +1,5 @@
 # LawyerWebsite
-Website for a Lawyer. Tech-Stack will be FastAPI, Jinja2, Bulma CSS and (not yet) HTMX. 
+Website for a Lawyer. Tech-Stack will be FastAPI, Jinja2, Bulma CSS and HTMX. 
 
 # Usage
 1. Clone Repo
